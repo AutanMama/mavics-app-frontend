@@ -1,10 +1,62 @@
 @import "tailwindcss";
 
+@theme {
+  /* MAVICS Brand Identity Colors */
+  --color-mavics-black: #000000;
+  --color-mavics-orange: #FF8C00;
+  --color-mavics-amber: #FFB347;
+  --color-mavics-gray: #1a1a1a;
+  --color-mavics-soft: #fcfcfc;
 
-body {
-  @apply bg-white text-gray-900 antialiased;
+  /* Custom Transitions & Shadows */
+  --shadow-mavics-glow: 0 10px 40px -10px rgba(255, 140, 0, 0.4);
+  --radius-mavics: 2rem;
 }
 
+/* Global Reset & Pro Typography */
+body {
+  @apply bg-mavics-soft text-mavics-black antialiased font-sans selection:bg-mavics-orange selection:text-white;
+}
+
+/* Professional Input Styling */
 input, textarea, select {
-  @apply focus:ring-2 focus:ring-blue-500 outline-none;
+  @apply border border-gray-200 bg-white px-4 py-3 rounded-xl transition-all duration-300;
+  @apply focus:ring-2 focus:ring-mavics-orange focus:border-mavics-orange outline-none;
+}
+
+/* Admin Table Styling */
+table {
+  @apply w-full border-separate border-spacing-0;
+}
+
+th {
+  @apply bg-gray-50 text-gray-500 text-xs font-black uppercase tracking-widest p-4 border-b border-gray-100;
+}
+
+td {
+  @apply p-4 border-b border-gray-50 text-sm align-middle;
+}
+
+/* Scrollbar Customization (Pro Touch) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-mavics-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-mavics-orange rounded-full hover:bg-mavics-amber transition-colors;
+}
+
+/* Animation for Hero Elements */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
 }

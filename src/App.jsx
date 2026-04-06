@@ -30,7 +30,7 @@ function App() {
         <Route path="/*" element={
           <div className="flex flex-col min-h-screen">
             <Navbar />
-            <div className="flex-1">
+            <div className="flex-1 pt-24">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
